@@ -51,7 +51,7 @@ const Shop = () => {
     // Brands logic is now handled in fetchProducts for state stability
 
     return (
-        <div className="container mx-auto px-4 py-12 min-h-screen bg-black">
+        <div className="container mx-auto px-4 py-12 min-h-screen">
             {/* Header / Intro */}
             <div className="max-w-2xl mb-16">
                 <h1 className="text-5xl font-black text-white uppercase tracking-tighter mb-4 leading-tight">

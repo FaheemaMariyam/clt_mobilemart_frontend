@@ -7,7 +7,7 @@ const Cart = () => {
     const { cartItems, cartTotal, loading, updateQuantity, removeFromCart } = useCart();
     const navigate = useNavigate();
 
-    if (loading) {
+    if (loading && cartItems.length === 0) {
         return <div className="text-center py-20 text-xl font-semibold">Loading Cart...</div>;
     }
 
@@ -30,7 +30,7 @@ const Cart = () => {
     }
 
     return (
-        <div className="container mx-auto py-10 px-4 text-white">
+        <div className={`container mx-auto py-10 px-4 text-white transition duration-300 ${loading ? 'opacity-50 pointer-events-none' : 'opacity-100'}`}>
             <button 
                 onClick={() => navigate('/products')} 
                 className="flex items-center text-yellow-500 hover:text-yellow-400 mb-8 font-bold transition group"

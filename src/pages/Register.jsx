@@ -120,7 +120,7 @@ const Register = () => {
                             type="submit"
                             className="w-full bg-yellow-500 text-black font-black uppercase tracking-widest text-[11px] py-4 mt-4 rounded-[20px] hover:bg-yellow-400 transition hover:shadow-[0_0_20px_rgba(255,176,0,0.4)]"
                         >
-                            Initialize Account
+                            Register Account
                         </button>
                     </form>
 
