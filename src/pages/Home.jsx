@@ -50,8 +50,10 @@ const Home = () => {
                         className="w-full h-full object-cover object-center" 
                         alt="Premium Hardware Catalog" 
                     />
-                    {/* Dark overlay ensuring text remains completely readable */}
-                    <div className="absolute inset-0 bg-gradient-to-r from-[#0a0c1f] via-[#12142B]/80 to-[#12142B]/30"></div>
+                    {/* Dark overlay for text readability: Heavy on left, completely transparent on right */}
+                    <div className="absolute inset-0 bg-gradient-to-r from-[#0a0c1f] via-[#0a0c1f]/80 to-transparent md:via-[#0a0c1f]/50"></div>
+                    {/* Extra mobile dimming to ensure text is readable stacked over the image */}
+                    <div className="absolute inset-0 bg-[#0a0c1f]/40 md:hidden"></div>
                 </div>
 
                 {/* Decorative background elements (now glowing on top of the dark overlay) */}
