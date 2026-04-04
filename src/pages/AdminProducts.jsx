@@ -178,8 +178,8 @@ const AdminProducts = () => {
 
             {/* Comprehensive Detail / Edit Modal */}
             {showModal && (
-                <div className="fixed inset-0 bg-black/90 backdrop-blur-xl flex items-center justify-center p-4 z-[70] overflow-y-auto">
-                    <div className="bg-[#1A1C29] rounded-[48px] max-w-5xl w-full p-8 lg:p-12 shadow-3xl border border-gray-800 my-10 relative overflow-hidden">
+                <div className="fixed inset-0 bg-black/90 backdrop-blur-xl flex justify-center p-4 z-[70] overflow-y-auto">
+                    <div className="bg-[#1A1C29] rounded-[48px] max-w-5xl w-full p-8 lg:p-12 shadow-3xl border border-gray-800 my-auto md:my-10 h-fit relative overflow-hidden">
                         
                         {/* Modal Header */}
                         <div className="flex justify-between items-start mb-10">
@@ -202,9 +202,9 @@ const AdminProducts = () => {
                                     {/* Gallery & Video */}
                                     <div className="space-y-6">
                                         <div className="grid grid-cols-3 gap-4 h-64">
-                                            <img src={selectedProduct.image1} className="w-full h-full object-cover rounded-3xl border border-gray-800" alt="View 1" />
-                                            <img src={selectedProduct.image2} className="w-full h-full object-cover rounded-3xl border border-gray-800" alt="View 2" />
-                                            <img src={selectedProduct.image3} className="w-full h-full object-cover rounded-3xl border border-gray-800" alt="View 3" />
+                                            <img src={selectedProduct.image1 || selectedProduct.thumbnail} className="w-full h-full object-cover rounded-3xl border border-gray-800 bg-[#12142B] p-2" alt="View 1" />
+                                            <img src={selectedProduct.image2 || selectedProduct.thumbnail} className="w-full h-full object-cover rounded-3xl border border-gray-800 opacity-50 bg-[#12142B] p-2" alt="View 2" />
+                                            <img src={selectedProduct.image3 || selectedProduct.thumbnail} className="w-full h-full object-cover rounded-3xl border border-gray-800 opacity-30 bg-[#12142B] p-2" alt="View 3" />
                                         </div>
                                         {selectedProduct.video && (
                                             <div className="aspect-video w-full rounded-3xl overflow-hidden border border-gray-800 shadow-2xl relative group">
