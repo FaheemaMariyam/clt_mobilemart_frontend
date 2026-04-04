@@ -7,6 +7,7 @@ import { FaImage, FaShoppingCart, FaCheckCircle, FaArrowRight } from 'react-icon
 import { useCart } from '../context/CartContext';
 import { useAuth } from '../context/AuthContext';
 import { useNavigate } from 'react-router-dom';
+import heroImage from '../assets/heroimage.jpg';
 
 const Home = () => {
     const { isAdmin } = useAuth();
@@ -64,12 +65,13 @@ const Home = () => {
                     {/* Right: Image Space/Placeholder */}
                     <div className="hidden md:flex w-full md:w-1/2 h-full items-center justify-center relative">
                         {/* 
-                            USER: Replace the div below with your actual smartphone image. 
-                            Suggested styling for image: <img src="your-image.png" className="max-h-[120%] rotate-12 absolute right-0" alt="Smartphone" /> 
+                            Hero Image loaded from assets
                         */}
-                        <div className="w-[300px] h-[500px] border-4 border-dashed border-gray-600/50 rounded-3xl flex items-center justify-center text-center p-6 bg-gray-800/20 rotate-12 absolute right-10">
-                            <span className="text-gray-500 font-bold uppercase tracking-widest text-sm">Add Phone<br/>Image Here</span>
-                        </div>
+                        <img 
+                            src={heroImage} 
+                            className="w-[300px] h-[500px] object-cover rounded-3xl rotate-12 absolute right-10 shadow-[0_20px_50px_rgba(0,0,0,0.5)] border-4 border-[#12142B]" 
+                            alt="Premium Device" 
+                        />
                     </div>
                 </div>
             </div>
