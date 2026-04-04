@@ -58,15 +58,6 @@ const Navbar = () => {
                                 </>
                             ) : (
                                 <>
-                                    <Link to="/cart" className="group relative flex items-center justify-center p-2.5 bg-white/5 hover:bg-yellow-500 rounded-2xl transition-all duration-300 border border-white/10 hover:border-yellow-500/50 shadow-xl overflow-hidden">
-                                        <div className="absolute inset-0 bg-yellow-500 opacity-0 group-hover:opacity-10 transition-opacity"></div>
-                                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-white group-hover:text-black transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" /></svg>
-                                        {cartCount > 0 && (
-                                            <span className="absolute -top-1 -right-1 bg-yellow-500 text-black text-[9px] font-black px-1.5 py-0.5 rounded-full border-2 border-black animate-pulse">
-                                                {cartCount}
-                                            </span>
-                                        )}
-                                    </Link>
                                     <Link to="/login" className="bg-yellow-500 text-black px-6 py-1.5 rounded-full font-bold hover:bg-yellow-400 transition transform hover:scale-105">Login</Link>
                                 </>
                             )}
@@ -146,10 +137,6 @@ const Navbar = () => {
                             </>
                         ) : (
                             <>
-                                <Link to="/cart" onClick={closeMobile} className="py-2 px-3 rounded-lg transition hover:bg-gray-800 flex items-center gap-2">
-                                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" /></svg>
-                                    Cart
-                                </Link>
                                 <div className="border-t border-gray-800 my-1"></div>
                                 <Link to="/login" onClick={closeMobile} className="w-full bg-yellow-500 text-black py-2.5 rounded-xl font-bold hover:bg-yellow-400 transition text-center block">
                                     Login

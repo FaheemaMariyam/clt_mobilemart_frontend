@@ -31,9 +31,9 @@ const ProductCard = ({ product }) => {
 
                 {/* Main Product Image Container */}
                 <Link to={user ? `/products/${product.id}` : '/login'} className="block h-52 bg-[#0D0F21] rounded-2xl mb-5 overflow-hidden relative group/img">
-                    {product.image1 ? (
+                    {product.thumbnail ? (
                         <img 
-                            src={product.image1} 
+                            src={product.thumbnail} 
                             alt={product.name} 
                             className="w-full h-full object-contain p-4 transition-transform duration-700 group-hover/img:scale-110" 
                         />
@@ -81,35 +81,37 @@ const ProductCard = ({ product }) => {
                         </span>
                     </div>
 
-                    {/* Action Button */}
-                    <button
-                        onClick={(e) => {
-                            e.preventDefault();
-                            if (!user) return (window.location.href = '/login');
-                            if (!inCart && !isOutOfStock) {
-                                addToCart(product.id, 1);
-                            }
-                        }}
-                        disabled={inCart || isOutOfStock}
-                        className={`w-full py-4 rounded-2xl font-black uppercase tracking-[0.2em] text-[10px] transition-all duration-300 flex items-center justify-center gap-3 shadow-2xl
-                            ${inCart 
-                                ? 'bg-green-500/10 text-green-500 border border-green-500/30' 
-                                : isOutOfStock 
-                                    ? 'bg-red-500/5 text-red-500/40 border border-red-500/10 cursor-not-allowed' 
-                                    : 'bg-white text-black hover:bg-yellow-500 hover:shadow-[0_10px_20px_rgba(255,176,0,0.3)]'}`}
-                    >
-                        {inCart ? (
-                            <>
-                                <FaCheckCircle size={14} /> Added to Cart
-                            </>
-                        ) : isOutOfStock ? (
-                            'Sold Out'
-                        ) : (
-                            <>
-                                <FaShoppingCart size={14} /> Acquire Device
-                            </>
-                        )}
-                    </button>
+                    {/* Action Button: Show only for authenticated users */}
+                    {user && (
+                        <button
+                            onClick={(e) => {
+                                e.preventDefault();
+                                if (!user) return (window.location.href = '/login');
+                                if (!inCart && !isOutOfStock) {
+                                    addToCart(product.id, 1);
+                                }
+                            }}
+                            disabled={inCart || isOutOfStock}
+                            className={`w-full py-4 rounded-2xl font-black uppercase tracking-[0.2em] text-[10px] transition-all duration-300 flex items-center justify-center gap-3 shadow-2xl
+                                ${inCart 
+                                    ? 'bg-green-500/10 text-green-500 border border-green-500/30' 
+                                    : isOutOfStock 
+                                        ? 'bg-red-500/5 text-red-500/40 border border-red-500/10 cursor-not-allowed' 
+                                        : 'bg-white text-black hover:bg-yellow-500 hover:shadow-[0_10px_20px_rgba(255,176,0,0.3)]'}`}
+                        >
+                            {inCart ? (
+                                <>
+                                    <FaCheckCircle size={14} /> Added to Cart
+                                </>
+                            ) : isOutOfStock ? (
+                                'Sold Out'
+                            ) : (
+                                <>
+                                    <FaShoppingCart size={14} /> Acquire Device
+                                </>
+                            )}
+                        </button>
+                    )}
                 </div>
             </div>
         </div>

@@ -120,22 +120,7 @@ const Shop = () => {
             </div>
 
             {/* Logic: Grid Rendering */}
-            {!user ? (
-                <div className="bg-[#1A1C30]/50 backdrop-blur-md border border-white/5 rounded-[3rem] p-20 text-center space-y-8">
-                    <div className="w-20 h-20 bg-yellow-500/10 border border-yellow-500/20 rounded-full flex items-center justify-center mx-auto mb-6 shadow-[0_0_50px_rgba(255,176,0,0.1)]">
-                        <FaMobileAlt className="text-yellow-500 text-3xl" />
-                    </div>
-                    <h2 className="text-3xl font-black text-white uppercase tracking-tighter">Encrypted Content</h2>
-                    <p className="text-gray-500 font-bold max-w-md mx-auto text-sm leading-relaxed uppercase tracking-widest">
-                        To maintain competitive integrity, our live inventory is reserved for registered members. Please identify yourself to proceed.
-                    </p>
-                    <div className="pt-6">
-                        <a href="/login" className="bg-white text-black px-12 py-4 rounded-full font-black uppercase tracking-widest text-[10px] hover:bg-yellow-500 transition-all hover:scale-105 shadow-2xl">
-                            Request Access Key
-                        </a>
-                    </div>
-                </div>
-            ) : loading ? (
+            {loading ? (
                 <div className="flex flex-col items-center justify-center py-40">
                     <div className="w-16 h-16 border-4 border-yellow-500/20 border-t-yellow-500 rounded-full animate-spin"></div>
                     <p className="text-gray-600 font-black uppercase tracking-[0.3em] text-[8px] mt-8">Decrypting Database...</p>
