@@ -56,6 +56,13 @@ export const CartProvider = ({ children }) => {
 
     const updateQuantity = async (itemId, quantity) => {
         if (quantity < 1) return; // Prevent negative/zero from UI
+        
+        const item = cartItems.find(i => i.id === itemId);
+        if (item && quantity > item.product.stock) {
+            toast.error(`Exceeds available stock (${item.product.stock})`);
+            return;
+        }
+
         try {
             await updateCartItem(itemId, quantity);
             await fetchCart();

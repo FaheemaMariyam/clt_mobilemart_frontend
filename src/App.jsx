@@ -4,6 +4,7 @@ import { AuthProvider } from './context/AuthContext';
 import { CartProvider } from './context/CartContext';
 import Layout from './components/Layout';
 import Home from './pages/Home';
+import Shop from './pages/Shop';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import ProtectedRoute from './components/ProtectedRoute';
@@ -25,7 +26,7 @@ function App() {
           <Layout>
             <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/products" element={<Home />} />
+            <Route path="/products" element={<Shop />} />
             <Route path="/products/:id" element={<ProductDetail />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />

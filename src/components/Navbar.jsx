@@ -40,11 +40,11 @@ const Navbar = () => {
                                     {isAdmin ? (
                                         <Link to="/admin" className="hover:text-yellow-400 transition font-bold text-red-400">Admin</Link>
                                     ) : (
-                                        <Link to="/cart" className="relative hover:text-yellow-400 transition flex items-center gap-1">
-                                            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" /></svg>
-                                            Cart
+                                        <Link to="/cart" className="group relative flex items-center justify-center p-2.5 bg-white/5 hover:bg-yellow-500 rounded-2xl transition-all duration-300 border border-white/10 hover:border-yellow-500/50 shadow-xl overflow-hidden">
+                                            <div className="absolute inset-0 bg-yellow-500 opacity-0 group-hover:opacity-10 transition-opacity"></div>
+                                            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-white group-hover:text-black transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" /></svg>
                                             {cartCount > 0 && (
-                                                <span className="absolute -top-2 -right-4 bg-red-500 text-white text-xs font-bold px-1.5 py-0.5 rounded-full">
+                                                <span className="absolute -top-1 -right-1 bg-yellow-500 text-black text-[9px] font-black px-1.5 py-0.5 rounded-full border-2 border-black animate-pulse">
                                                     {cartCount}
                                                 </span>
                                             )}
@@ -58,11 +58,11 @@ const Navbar = () => {
                                 </>
                             ) : (
                                 <>
-                                    <Link to="/cart" className="relative hover:text-yellow-400 transition flex items-center gap-1">
-                                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" /></svg>
-                                        Cart
+                                    <Link to="/cart" className="group relative flex items-center justify-center p-2.5 bg-white/5 hover:bg-yellow-500 rounded-2xl transition-all duration-300 border border-white/10 hover:border-yellow-500/50 shadow-xl overflow-hidden">
+                                        <div className="absolute inset-0 bg-yellow-500 opacity-0 group-hover:opacity-10 transition-opacity"></div>
+                                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-white group-hover:text-black transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" /></svg>
                                         {cartCount > 0 && (
-                                            <span className="absolute -top-2 -right-4 bg-red-500 text-white text-xs font-bold px-1.5 py-0.5 rounded-full">
+                                            <span className="absolute -top-1 -right-1 bg-yellow-500 text-black text-[9px] font-black px-1.5 py-0.5 rounded-full border-2 border-black animate-pulse">
                                                 {cartCount}
                                             </span>
                                         )}
