@@ -62,14 +62,14 @@ const Home = () => {
                         </a>
                     </div>
                     
-                    {/* Right: Image Space/Placeholder */}
-                    <div className="hidden md:flex w-full md:w-1/2 h-full items-center justify-center relative">
-                        {/* 
-                            Hero Image loaded from assets
-                        */}
+                    {/* Right: Full Area Image */}
+                    <div className="hidden md:block absolute top-0 right-0 w-[60%] h-[500px] z-0 overflow-hidden">
+                        {/* Gradient mask to seamlessly blend the image into the dark background */}
+                        <div className="absolute inset-y-0 left-0 w-48 bg-gradient-to-r from-slate-900 to-transparent z-10"></div>
+                        
                         <img 
                             src={heroImage} 
-                            className="w-[300px] h-[500px] object-cover rounded-3xl rotate-12 absolute right-10 shadow-[0_20px_50px_rgba(0,0,0,0.5)] border-4 border-[#12142B]" 
+                            className="w-full h-full object-cover object-center" 
                             alt="Premium Device" 
                         />
                     </div>
