@@ -247,7 +247,7 @@ const AdminProducts = () => {
                             </div>
                         ) : (
                             /* EDIT MODE */
-                            <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-10">
+                            <form onSubmit={handleSubmit} className="grid grid-cols-1 lg:grid-cols-2 gap-10">
                                 <div className="space-y-6">
                                     <div>
                                         <label className="block text-[10px] font-black text-gray-500 mb-3 uppercase tracking-[0.2em]">Model Identity</label>
@@ -257,7 +257,7 @@ const AdminProducts = () => {
                                             value={formData.name} onChange={(e) => setFormData({...formData, name: e.target.value})} placeholder="Device Name"
                                         />
                                     </div>
-                                    <div className="grid grid-cols-2 gap-6">
+                                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                                         <div>
                                             <label className="block text-[10px] font-black text-gray-500 mb-3 uppercase tracking-[0.2em]">Brand Agency</label>
                                             <input 
@@ -313,7 +313,7 @@ const AdminProducts = () => {
                                             <MediaInput icon={FaVideo} label="Video Presentation" onChange={(e) => handleFileChange(e, 'video')} accent="text-red-500" />
                                         </div>
                                     </div>
-                                    <div className="flex gap-4 pt-4">
+                                    <div className="flex flex-col sm:flex-row gap-4 pt-4">
                                         <button 
                                             type="button" 
                                             onClick={() => selectedProduct ? setIsEditMode(false) : setShowModal(false)}

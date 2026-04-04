@@ -19,7 +19,7 @@ const AdminDashboard = () => {
         <div className="flex flex-col lg:flex-row min-h-screen bg-[#0F111A]">
             
             {/* Desktop Sidebar (Fixed) */}
-            <aside className="w-full lg:w-80 bg-[#141621] border-r border-gray-800 flex flex-col sticky top-0 h-screen overflow-y-auto">
+            <aside className="w-full lg:w-80 bg-[#141621] border-r border-gray-800 flex flex-col lg:sticky lg:top-0 h-auto lg:h-screen overflow-y-auto z-40">
                 
                 {/* Brand Logo Section */}
                 <div className="p-10 border-b border-gray-800/50">
