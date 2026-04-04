@@ -107,7 +107,7 @@ const ProductCard = ({ product }) => {
                                 'Sold Out'
                             ) : (
                                 <>
-                                    <FaShoppingCart size={14} /> Acquire Device
+                                    <FaShoppingCart size={14} /> ADD TO CART
                                 </>
                             )}
                         </button>
