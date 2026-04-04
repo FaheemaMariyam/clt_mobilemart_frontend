@@ -56,7 +56,7 @@ const AdminUsers = () => {
 
     return (
         <div className="space-y-12">
-            <div className="bg-[#1A1C29] p-8 rounded-3xl border border-gray-800 shadow-xl flex justify-between items-center relative overflow-hidden">
+            <div className="bg-[#1A1C29] p-6 sm:p-8 rounded-3xl border border-gray-800 shadow-xl flex flex-col sm:flex-row justify-between items-start sm:items-center gap-6 relative overflow-hidden">
                 <div className="absolute top-0 right-0 w-32 h-32 bg-yellow-500/5 blur-[50px] -mr-16 -mt-16"></div>
                 <div className="relative">
                     <h2 className="text-3xl font-black text-white uppercase tracking-tight border-l-4 border-yellow-500 pl-4">Platform Intelligence</h2>
@@ -80,11 +80,11 @@ const AdminUsers = () => {
                             </span>
                         </div>
 
-                        <div className="flex items-start gap-8">
-                            <div className={`w-20 h-20 rounded-3xl flex items-center justify-center border font-black text-2xl transition-all duration-500 ${u.is_blocked ? 'bg-red-500/10 text-red-500 border-red-500/20' : 'bg-yellow-500/10 text-yellow-500 border-yellow-500/20 group-hover:bg-yellow-500 group-hover:text-black'}`}>
+                        <div className="flex flex-col sm:flex-row items-center sm:items-start gap-6 text-center sm:text-left pt-6 sm:pt-0">
+                            <div className={`w-20 h-20 rounded-3xl flex items-center justify-center border font-black text-2xl transition-all duration-500 shrink-0 ${u.is_blocked ? 'bg-red-500/10 text-red-500 border-red-500/20' : 'bg-yellow-500/10 text-yellow-500 border-yellow-500/20 group-hover:bg-yellow-500 group-hover:text-black'}`}>
                                 {u.first_name?.[0]}{u.last_name?.[0]}
                             </div>
-                            <div className="flex-1 space-y-4">
+                            <div className="flex-1 w-full space-y-4">
                                 <div>
                                     <h3 className="text-2xl font-black text-white tracking-tighter uppercase leading-none">{u.first_name} {u.last_name}</h3>
                                     <div className="flex items-center gap-2 mt-2 text-gray-500">
@@ -93,8 +93,8 @@ const AdminUsers = () => {
                                     </div>
                                 </div>
 
-                                <div className="flex items-center gap-4 pt-4">
-                                    <div className="flex-1 flex gap-2">
+                                <div className="flex flex-col sm:flex-row items-center gap-4 pt-4">
+                                    <div className="flex-1 w-full flex gap-2">
                                         <button 
                                             onClick={() => handleAccountStatus(u)}
                                             className={`flex-1 p-4 rounded-xl transition flex items-center justify-center gap-3 font-black uppercase tracking-widest text-[9px] border ${

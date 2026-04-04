@@ -134,7 +134,7 @@ const AdminProducts = () => {
 
     return (
         <div className="space-y-10 text-white">
-            <div className="flex justify-between items-center bg-[#1A1C29] p-8 rounded-3xl border border-gray-800 shadow-xl">
+            <div className="flex flex-col sm:flex-row gap-6 justify-between items-start sm:items-center bg-[#1A1C29] p-6 sm:p-8 rounded-3xl border border-gray-800 shadow-xl">
                 <div>
                     <h2 className="text-3xl font-black tracking-tight uppercase border-l-4 border-yellow-500 pl-4">Product Catalog</h2>
                     <p className="text-gray-500 text-sm font-bold mt-1 ml-5 italic">Exclusive Admin View</p>
@@ -152,10 +152,10 @@ const AdminProducts = () => {
                     <div 
                         key={p.id} 
                         onClick={() => openModal(p)}
-                        className="bg-[#1A1C29] p-4 rounded-3xl border border-gray-800 hover:border-yellow-500/50 transition-all cursor-pointer group flex items-center justify-between"
+                        className="bg-[#1A1C29] p-4 rounded-3xl border border-gray-800 hover:border-yellow-500/50 transition-all cursor-pointer group flex flex-col sm:flex-row items-center justify-between gap-6"
                     >
-                        <div className="flex items-center gap-6">
-                            <div className="w-20 h-20 bg-[#12142B] rounded-2xl overflow-hidden border border-gray-800 p-2 transform group-hover:scale-105 transition-transform">
+                        <div className="flex flex-col sm:flex-row items-center gap-6 text-center sm:text-left w-full sm:w-auto">
+                            <div className="w-20 h-20 shrink-0 bg-[#12142B] rounded-2xl overflow-hidden border border-gray-800 p-2 transform group-hover:scale-105 transition-transform">
                                 <img src={p.thumbnail || p.image1} alt={p.name} className="w-full h-full object-contain" />
                             </div>
                             <div>
@@ -166,7 +166,7 @@ const AdminProducts = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className="flex items-center gap-4 px-6">
+                        <div className="flex items-center gap-4 px-6 w-full sm:w-auto justify-center sm:justify-end border-t sm:border-t-0 border-gray-800/50 pt-4 sm:pt-0">
                             <span className={`text-[10px] font-black uppercase px-4 py-2 rounded-xl ${p.stock > 0 ? 'bg-green-500/10 text-green-400' : 'bg-red-500/10 text-red-500'}`}>
                                 {p.stock} In Stock
                             </span>
