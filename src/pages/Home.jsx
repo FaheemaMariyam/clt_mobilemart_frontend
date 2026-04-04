@@ -41,11 +41,23 @@ const Home = () => {
     return (
         <div className="container mx-auto px-4 pt-8 space-y-12 pb-12">
             {/* Hero Container */}
-            <div className="relative w-full h-[500px] rounded-3xl overflow-hidden bg-gradient-to-br from-[#12142B] via-slate-900 to-[#1E203B] shadow-2xl border border-gray-800 flex items-center px-8 md:px-16">
-                {/* Decorative background elements */}
-                <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0">
-                    <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-teal-500/10 blur-[100px] rounded-full"></div>
-                    <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-yellow-500/10 blur-[100px] rounded-full"></div>
+            <div className="relative w-full h-[500px] rounded-3xl overflow-hidden shadow-2xl border border-gray-800 flex items-center px-8 md:px-16">
+                
+                {/* Full Background Image */}
+                <div className="absolute inset-0 z-0">
+                    <img 
+                        src={heroImage} 
+                        className="w-full h-full object-cover object-center" 
+                        alt="Premium Hardware Catalog" 
+                    />
+                    {/* Dark overlay ensuring text remains completely readable */}
+                    <div className="absolute inset-0 bg-gradient-to-r from-[#0a0c1f] via-[#12142B]/80 to-[#12142B]/30"></div>
+                </div>
+
+                {/* Decorative background elements (now glowing on top of the dark overlay) */}
+                <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0 mix-blend-screen pointer-events-none">
+                    <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-teal-500/20 blur-[100px] rounded-full"></div>
+                    <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-yellow-500/20 blur-[100px] rounded-full"></div>
                 </div>
 
                 <div className="relative z-10 w-full flex flex-col md:flex-row items-center justify-between gap-8 h-full">
@@ -60,18 +72,6 @@ const Home = () => {
                         <a href="#popular" className="inline-block bg-white text-black font-bold uppercase tracking-widest text-sm px-8 py-3.5 rounded-full hover:bg-yellow-500 transition shadow-[0_0_20px_rgba(255,255,255,0.3)] hover:shadow-[0_0_25px_rgba(255,176,0,0.5)]">
                             Shop Now
                         </a>
-                    </div>
-                    
-                    {/* Right: Full Area Image */}
-                    <div className="hidden md:block absolute top-0 right-0 w-[60%] h-[500px] z-0 overflow-hidden">
-                        {/* Gradient mask to seamlessly blend the image into the dark background */}
-                        <div className="absolute inset-y-0 left-0 w-48 bg-gradient-to-r from-slate-900 to-transparent z-10"></div>
-                        
-                        <img 
-                            src={heroImage} 
-                            className="w-full h-full object-cover object-center" 
-                            alt="Premium Device" 
-                        />
                     </div>
                 </div>
             </div>
