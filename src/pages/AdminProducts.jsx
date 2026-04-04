@@ -274,6 +274,14 @@ const AdminProducts = () => {
                                                 value={formData.price} onChange={(e) => setFormData({...formData, price: e.target.value})} placeholder="0.00"
                                             />
                                         </div>
+                                        <div>
+                                            <label className="block text-[10px] font-black text-gray-500 mb-3 uppercase tracking-[0.2em]">Inventory Count</label>
+                                            <input 
+                                                type="number" 
+                                                className="w-full bg-[#12142B] border border-gray-800 p-5 rounded-[24px] focus:ring-2 focus:ring-yellow-500 outline-none transition font-bold text-white" 
+                                                value={formData.stock} onChange={(e) => setFormData({...formData, stock: e.target.value})} placeholder="0"
+                                            />
+                                        </div>
                                     </div>
                                     <div>
                                         <label className="block text-[10px] font-black text-gray-500 mb-3 uppercase tracking-[0.2em]">Technical Specifications</label>
