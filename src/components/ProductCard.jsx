@@ -12,7 +12,7 @@ const ProductCard = ({ product }) => {
     const isOutOfStock = product.stock <= 0;
 
     return (
-        <div className="relative group">
+        <div className="relative group w-full">
             {/* Glossy Background & Glow Frame */}
             <div className="absolute -inset-0.5 bg-gradient-to-r from-yellow-500/20 to-orange-500/0 rounded-[2rem] blur opacity-0 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"></div>
             
