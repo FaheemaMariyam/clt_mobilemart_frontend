@@ -95,13 +95,9 @@ const Login = () => {
                             LOGIN 
                         </button>
                     </form>
-
-                    <div className="mt-8 text-center text-sm font-medium text-gray-400 space-y-2">
+                    <div className="mt-8 text-center text-sm font-medium text-gray-400">
                         <p>
                             New to MobileMart? <Link to="/register" className="text-yellow-500 hover:text-yellow-400 transition">Create an account</Link>
-                        </p>
-                        <p>
-                            Forgot your password? <Link to="/forgot-password" title="Forgot Password Page Link" className="text-yellow-500 hover:text-yellow-400 transition">Reset here</Link>
                         </p>
                     </div>
                 </div>
