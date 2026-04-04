@@ -27,7 +27,6 @@ export const CartProvider = ({ children }) => {
             setCartItems(data.items || []);
             setCartTotal(data.grand_total || 0);
         } catch (error) {
-            console.error("Failed to fetch cart", error);
         } finally {
             setLoading(false);
         }
@@ -46,7 +45,7 @@ export const CartProvider = ({ children }) => {
         try {
             await apiAddToCart(productId, quantity);
             toast.success('Added to Cart!');
-            await fetchCart(); // Refresh cart to get the latest state and total
+            await fetchCart();
             return true;
         } catch (error) {
             toast.error('Failed to add to cart.');
@@ -55,7 +54,7 @@ export const CartProvider = ({ children }) => {
     };
 
     const updateQuantity = async (itemId, quantity) => {
-        if (quantity < 1) return; // Prevent negative/zero from UI
+        if (quantity < 1) return;
         
         const item = cartItems.find(i => i.id === itemId);
         if (item && quantity > item.product.stock) {

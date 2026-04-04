@@ -13,12 +13,10 @@ const ProductCard = ({ product }) => {
 
     return (
         <div className="relative group w-full">
-            {/* Glossy Background & Glow Frame */}
             <div className="absolute -inset-0.5 bg-gradient-to-r from-yellow-500/20 to-orange-500/0 rounded-[2rem] blur opacity-0 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"></div>
             
             <div className="relative bg-[#1A1C30]/80 backdrop-blur-xl border border-white/5 rounded-[2rem] overflow-hidden p-5 transition-all duration-500 transform group-hover:-translate-y-2 group-hover:border-yellow-500/30">
                 
-                {/* Badge Overlay */}
                 {isOutOfStock ? (
                     <div className="absolute top-4 left-4 z-10 bg-red-600 text-white text-[9px] font-black uppercase tracking-widest px-3 py-1 rounded-full shadow-lg">
                         Out of Stock
@@ -29,7 +27,6 @@ const ProductCard = ({ product }) => {
                     </div>
                 )}
 
-                {/* Main Product Image Container */}
                 <Link to={user ? `/products/${product.id}` : '/login'} className="block h-52 bg-[#1E203B] rounded-2xl mb-5 overflow-hidden relative group/img">
                     {product.thumbnail ? (
                         <img 
@@ -44,11 +41,9 @@ const ProductCard = ({ product }) => {
                         </div>
                     )}
                     
-                    {/* Glass Overlay on Hover */}
                     <div className="absolute inset-0 bg-white/5 opacity-0 group-hover/img:opacity-100 transition-opacity"></div>
                 </Link>
 
-                {/* Content Section */}
                 <div className="space-y-4 px-1">
                     <div className="flex justify-between items-start">
                         <div className="max-w-[70%]">
@@ -67,7 +62,6 @@ const ProductCard = ({ product }) => {
                         </div>
                     </div>
 
-                    {/* Meta Info */}
                     <div className="flex items-center gap-3 pt-1">
                         <div className="flex text-yellow-500 gap-0.5">
                             <FaStar size={10} />
@@ -81,7 +75,6 @@ const ProductCard = ({ product }) => {
                         </span>
                     </div>
 
-                    {/* Action Button: Show only for authenticated users */}
                     {user && (
                         <button
                             onClick={(e) => {

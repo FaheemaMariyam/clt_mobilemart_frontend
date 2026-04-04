@@ -35,7 +35,6 @@ const AdminOverview = () => {
 
     return (
         <div className="space-y-12 animate-in fade-in slide-in-from-bottom-6 duration-1000">
-            {/* Real-time Stats Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-8">
                 <StatCard 
                     icon={FaUsers} 
@@ -60,9 +59,7 @@ const AdminOverview = () => {
                 />
             </div>
 
-            {/* Dynamic Analytics Section */}
             <div className="grid grid-cols-1 xl:grid-cols-2 gap-4 sm:gap-8">
-                {/* User Growth Chart */}
                 <div className="bg-[#141621] p-6 sm:p-10 rounded-[30px] sm:rounded-[40px] border border-gray-800 shadow-2xl relative overflow-hidden group">
                     <div className="absolute top-0 right-0 w-32 h-32 bg-yellow-500/5 blur-3xl pointer-events-none"></div>
                     <div className="mb-10">
@@ -91,7 +88,6 @@ const AdminOverview = () => {
                     </div>
                 </div>
 
-                {/* Secondary Distribution Chart */}
                 <div className="bg-[#141621] p-6 sm:p-10 rounded-[30px] sm:rounded-[40px] border border-gray-800 shadow-2xl relative overflow-hidden group">
                     <div className="mb-10">
                         <h3 className="text-xl font-black text-white uppercase tracking-tight">Distribution Matrix</h3>
@@ -113,7 +109,6 @@ const AdminOverview = () => {
                     </div>
                 </div>
 
-                {/* Account Status Pie Chart */}
                 <div className="bg-[#141621] p-6 sm:p-10 rounded-[30px] sm:rounded-[40px] border border-gray-800 shadow-2xl relative overflow-hidden group">
                     <div className="mb-10 text-center">
                         <h3 className="text-xl font-black text-white uppercase tracking-tight">Security Distribution</h3>
@@ -150,7 +145,6 @@ const AdminOverview = () => {
                 </div>
             </div>
 
-            {/* System Status Banner */}
             <div className="bg-[#12142B] p-6 sm:p-10 rounded-[30px] sm:rounded-[40px] border border-gray-800 flex flex-col sm:flex-row items-center justify-between gap-6 border-dashed relative overflow-hidden">
                 <div className="absolute inset-0 bg-yellow-500/5 opacity-20 pointer-events-none"></div>
                 <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6 relative text-center sm:text-left">

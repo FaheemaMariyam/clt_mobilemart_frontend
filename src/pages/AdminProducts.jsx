@@ -73,7 +73,6 @@ const AdminProducts = () => {
             fetchProducts();
             resetForm();
         } catch (error) {
-            console.error('Submit error:', error.response?.data);
             toast.error('Failed to save product');
         }
     };
@@ -176,7 +175,6 @@ const AdminProducts = () => {
                 ))}
             </div>
 
-            {/* Comprehensive Detail / Edit Modal */}
             {showModal && (
                 <div className="fixed inset-0 bg-black/90 backdrop-blur-xl flex justify-center p-4 z-[70] overflow-y-auto">
                     <div className="bg-[#1A1C29] rounded-[48px] max-w-5xl w-full p-8 lg:p-12 shadow-3xl border border-gray-800 my-auto md:my-10 h-fit relative overflow-hidden">
@@ -214,7 +212,6 @@ const AdminProducts = () => {
                                         )}
                                     </div>
 
-                                    {/* Product Details info */}
                                     <div className="space-y-8">
                                         <div>
                                             <label className="text-[10px] font-black uppercase tracking-[0.2em] text-yellow-500 opacity-50 mb-3 block">Specifications</label>

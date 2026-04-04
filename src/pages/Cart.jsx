@@ -41,12 +41,10 @@ const Cart = () => {
             <h1 className="text-4xl font-black text-white mb-10 tracking-tight uppercase border-l-8 border-yellow-500 pl-6">Shopping Cart</h1>
 
             <div className="flex flex-col lg:flex-row gap-10">
-                {/* Cart Items List */}
                 <div className="flex-1 space-y-6">
                     {cartItems.map((item) => (
                         <div key={item.id} className="bg-[#1A1C29] rounded-2xl shadow-xl border border-gray-800 p-6 flex items-center flex-col sm:flex-row gap-8 transition-all hover:border-gray-700">
                             
-                            {/* Product Image */}
                             <Link to={`/products/${item.product.id}`} className="w-28 h-28 sm:w-36 sm:h-36 bg-[#12142B] rounded-2xl overflow-hidden border border-gray-800 flex-shrink-0 flex items-center justify-center p-4 group">
                                 {item.product.thumbnail ? (
                                     <img src={item.product.thumbnail} alt={item.product.name} className="w-full h-full object-contain group-hover:scale-110 transition-transform duration-500" />
@@ -55,7 +53,6 @@ const Cart = () => {
                                 )}
                             </Link>
 
-                            {/* Product Info */}
                             <div className="flex-1 text-center sm:text-left">
                                 <p className="text-xs tracking-[0.2em] uppercase text-yellow-500 font-black mb-1.5 opacity-80">{item.product.brand}</p>
                                 <Link to={`/products/${item.product.id}`}>
@@ -64,7 +61,6 @@ const Cart = () => {
                                 <p className="text-yellow-500 font-black text-xl mt-3">${item.product.price}</p>
                             </div>
 
-                            {/* Quantity Controls */}
                             <div className="flex flex-col items-center gap-4 bg-[#12142B] px-4 py-3 rounded-2xl border border-gray-800">
                                 <div className="flex items-center gap-3">
                                     <button 
@@ -91,7 +87,6 @@ const Cart = () => {
                                 </button>
                             </div>
 
-                            {/* Item Total */}
                             <div className="w-full sm:w-28 text-center sm:text-right">
                                 <p className="text-gray-500 text-[10px] uppercase font-black tracking-widest mb-1">Subtotal</p>
                                 <p className="font-black text-2xl text-white">
@@ -102,10 +97,8 @@ const Cart = () => {
                     ))}
                 </div>
 
-                {/* Summary Card */}
                 <div className="w-full lg:w-[380px]">
                     <div className="bg-[#1A1C29] rounded-3xl shadow-2xl border border-gray-800 p-8 h-fit sticky top-28 overflow-hidden relative">
-                        {/* Static Glow decoration */}
                         <div className="absolute top-0 right-0 w-32 h-32 bg-yellow-500/5 blur-[60px] rounded-full -mr-16 -mt-16"></div>
                         
                         <h2 className="text-2xl font-black text-white mb-8 tracking-tight flex items-center gap-3">
@@ -137,7 +130,6 @@ const Cart = () => {
                         
 
                         <div className="mt-8 flex items-center justify-center gap-4 opacity-30 grayscale">
-                            {/* Dummy payment icons */}
                             <div className="w-10 h-6 bg-white/20 rounded"></div>
                             <div className="w-10 h-6 bg-white/20 rounded"></div>
                             <div className="w-10 h-6 bg-white/20 rounded"></div>

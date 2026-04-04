@@ -13,7 +13,7 @@ const Shop = () => {
     const [selectedBrand, setSelectedBrand] = useState('All');
     const [allBrands, setAllBrands] = useState(['All']);
 
-    // Debounce Logic
+
     useEffect(() => {
         const handler = setTimeout(() => {
             setDebouncedSearch(searchTerm);
@@ -36,23 +36,19 @@ const Shop = () => {
             const productList = data.results || data;
             setProducts(productList);
 
-            // Update brands list only if it's currently just ['All'] (initial load)
             if (allBrands.length === 1 && productList.length > 0) {
                 const uniqueBrands = ['All', ...new Set(productList.map(p => p.brand).filter(Boolean))];
                 setAllBrands(uniqueBrands);
             }
         } catch (error) {
-            console.error('Fetch error:', error);
         } finally {
             setLoading(false);
         }
     };
 
-    // Brands logic is now handled in fetchProducts for state stability
 
     return (
         <div className="container mx-auto px-4 py-12 min-h-screen">
-            {/* Header / Intro */}
             <div className="max-w-2xl mb-16">
                 <h1 className="text-5xl font-black text-white uppercase tracking-tighter mb-4 leading-tight">
                     Premium <br /><span className="text-yellow-500">Identity Inventory</span>
@@ -64,11 +60,9 @@ const Shop = () => {
                 </p>
             </div>
 
-            {/* Terminal Interface: Search & Filters */}
             <div className="bg-[#12142B] border border-gray-800 rounded-[2.5rem] p-8 mb-12 shadow-3xl">
                 <div className="flex flex-col lg:flex-row gap-8 items-end">
                     
-                    {/* Search Component */}
                     <div className="flex-1 w-full group">
                         <label className="block text-[10px] font-black uppercase tracking-widest text-gray-500 mb-3 ml-2">Search Terminal</label>
                         <div className="relative">
@@ -101,7 +95,6 @@ const Shop = () => {
                 </div>
             </div>
 
-            {/* Logic: Grid Rendering */}
             {loading ? (
                 <div className="flex flex-col items-center justify-center py-40">
                     <div className="w-16 h-16 border-4 border-yellow-500/20 border-t-yellow-500 rounded-full animate-spin"></div>

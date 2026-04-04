@@ -29,7 +29,6 @@ const Home = () => {
             const data = await getProducts();
             setProducts(data.results || data);
         } catch (error) {
-            console.error('Failed to fetch products:', error);
             toast.error('Failed to load products');
         } finally {
             setLoading(false);
@@ -40,30 +39,24 @@ const Home = () => {
 
     return (
         <div className="container mx-auto px-4 pt-8 space-y-12 pb-12">
-            {/* Hero Container */}
             <div className="relative w-full min-h-[400px] md:h-[500px] rounded-3xl overflow-hidden shadow-2xl border border-gray-800 flex items-center px-6 md:px-16 py-12 md:py-0">
                 
-                {/* Full Background Image */}
                 <div className="absolute inset-0 z-0">
                     <img 
                         src={heroImage} 
                         className="w-full h-full object-cover object-center" 
                         alt="Premium Hardware Catalog" 
                     />
-                    {/* Dark overlay for text readability: Heavy on left, completely transparent on right */}
                     <div className="absolute inset-0 bg-gradient-to-r from-[#0a0c1f] via-[#0a0c1f]/80 to-transparent md:via-[#0a0c1f]/50"></div>
-                    {/* Extra mobile dimming to ensure text is readable stacked over the image */}
                     <div className="absolute inset-0 bg-[#0a0c1f]/40 md:hidden"></div>
                 </div>
 
-                {/* Decorative background elements (now glowing on top of the dark overlay) */}
                 <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0 mix-blend-screen pointer-events-none">
                     <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-teal-500/20 blur-[100px] rounded-full"></div>
                     <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-yellow-500/20 blur-[100px] rounded-full"></div>
                 </div>
 
                 <div className="relative z-10 w-full flex flex-col md:flex-row items-center justify-between gap-8 h-full">
-                    {/* Left: Text Content */}
                     <div className="max-w-xl text-center md:text-left flex flex-col items-center md:items-start justify-center">
                         <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-white mb-6 tracking-tight leading-tight">
                             Discover the Latest <br/><span className="text-yellow-500">Smartphones</span>

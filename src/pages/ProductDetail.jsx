@@ -22,13 +22,11 @@ const ProductDetail = () => {
             try {
                 const data = await getProductById(id);
                 setProduct(data);
-                // Set the primary image as the initial active media
                 if (data.image1) setActiveMedia({ type: 'image', url: data.image1 });
                 else if (data.image2) setActiveMedia({ type: 'image', url: data.image2 });
                 else if (data.image3) setActiveMedia({ type: 'image', url: data.image3 });
                 else if (data.video) setActiveMedia({ type: 'video', url: data.video });
             } catch (error) {
-                console.error('Fetch error:', error);
                 toast.error('Product not found');
                 navigate('/products');
             } finally {
@@ -48,7 +46,6 @@ const ProductDetail = () => {
     if (loading) return <div className="text-center py-20 text-xl font-semibold">Loading Product Details...</div>;
     if (!product) return null;
 
-    // Helper to format specifications safely
     const renderSpecs = () => {
         if (!product.specifications) return <p className="text-gray-500 italic">No specifications provided.</p>;
         
@@ -80,7 +77,6 @@ const ProductDetail = () => {
             <div className="bg-[#1A1C29] rounded-3xl shadow-2xl overflow-hidden border border-gray-800">
                 <div className="grid grid-cols-1 md:grid-cols-2">
                     
-                    {/* Media Section */}
                     <div className="bg-[#12142B] p-6 lg:p-10 flex flex-col justify-center border-r border-gray-800 relative shadow-inner">
                         <div className="aspect-square bg-[#242736] rounded-2xl border border-gray-800 overflow-hidden mb-6 relative flex items-center justify-center">
                             {activeMedia ? (
@@ -94,7 +90,6 @@ const ProductDetail = () => {
                             )}
                         </div>
 
-                        {/* Thumbnails */}
                         <div className="flex gap-4 justify-center overflow-x-auto py-2">
                             {product.image1 && (
                                 <button onClick={() => setActiveMedia({ type: 'image', url: product.image1 })} className={`w-20 h-20 rounded-xl border-2 overflow-hidden flex-shrink-0 transition bg-[#1A1C29] ${activeMedia?.url === product.image1 ? 'border-yellow-500 shadow-[0_0_15px_rgba(255,176,0,0.3)] transform scale-110' : 'border-gray-700 hover:border-gray-500'}`}>
@@ -120,7 +115,6 @@ const ProductDetail = () => {
                         </div>
                     </div>
 
-                    {/* Details Section */}
                     <div className="p-8 lg:p-12 flex flex-col justify-between">
                         <div>
                             <span className="bg-yellow-500/10 text-yellow-500 text-xs font-black px-4 py-1.5 rounded-full uppercase tracking-widest border border-yellow-500/20">
@@ -162,7 +156,6 @@ const ProductDetail = () => {
                             </div>
                         </div>
 
-                        {/* Action Area */}
                         <div className="mt-auto pt-8">
                             <button 
                                 onClick={handleAddToCart}

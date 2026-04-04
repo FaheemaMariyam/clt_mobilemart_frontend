@@ -44,7 +44,6 @@ const Profile = () => {
 
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
                 
-                {/* User Card */}
                 <div className="lg:col-span-1 space-y-6">
                     <div className="bg-[#1A1C29] p-10 rounded-[40px] border border-gray-800 relative overflow-hidden shadow-2xl">
                         <div className="absolute top-0 right-0 w-32 h-32 bg-yellow-500/5 blur-[50px] -mr-16 -mt-16"></div>
@@ -64,7 +63,6 @@ const Profile = () => {
                     </div>
                 </div>
 
-                {/* Security Section */}
                 <div className="lg:col-span-2 space-y-8">
                     <div className="bg-[#1A1C29] p-10 rounded-[40px] border border-gray-800 shadow-2xl space-y-10">
                         <div className="flex items-center gap-6">

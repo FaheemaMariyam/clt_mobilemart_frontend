@@ -33,7 +33,6 @@ function App() {
             <Route path="/forgot-password" element={<ForgotPassword />} />
             <Route path="/reset-password" element={<ResetPassword />} />
             
-            {/* User Routes */}
             <Route path="/cart" element={
               <ProtectedRoute>
                 <Cart />
@@ -45,7 +44,6 @@ function App() {
               </ProtectedRoute>
             } />
 
-            {/* Admin Routes */}
             <Route path="/admin" element={
               <ProtectedRoute adminOnly={true}>
                 <AdminDashboard />

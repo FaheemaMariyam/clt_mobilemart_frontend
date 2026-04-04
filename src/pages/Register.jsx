@@ -22,7 +22,6 @@ const Register = () => {
             toast.success('Registration successful! Please login.');
             navigate('/login');
         } catch (error) {
-            console.error('Registration failed:', error);
             const errorMsg = error.response?.data ? 
                 Object.values(error.response.data).flat().join(', ') : 
                 'Registration failed. Try again.';
@@ -34,7 +33,6 @@ const Register = () => {
         <div className="min-h-[calc(100vh-100px)] flex items-center justify-center p-4 bg-black">
             <div className="w-full max-w-5xl flex flex-col md:flex-row bg-[#0D0F21] rounded-[2.5rem] shadow-3xl overflow-hidden border border-gray-800 h-full md:h-[650px]">
                 
-                {/* Left Side (Image Panel) */}
                 <div className="w-full md:w-5/12 relative flex flex-col items-center justify-center text-center p-12 min-h-[300px] md:min-h-full">
                     <img src={heroImage} className="absolute inset-0 w-full h-full object-cover object-left" alt="MobileMart Identity" />
                     <div className="absolute inset-0 bg-gradient-to-t from-black via-[#12142B]/80 to-transparent md:bg-gradient-to-tr"></div>
@@ -54,7 +52,6 @@ const Register = () => {
                     </div>
                 </div>
 
-                {/* Right Side (Form) */}
                 <div className="w-full md:w-7/12 p-8 md:p-14 flex flex-col justify-center bg-[#12142B] relative">
                     <h2 className="text-3xl font-black text-white mb-8 tracking-tighter uppercase border-l-4 border-yellow-500 pl-4">Account Creation</h2>
                     

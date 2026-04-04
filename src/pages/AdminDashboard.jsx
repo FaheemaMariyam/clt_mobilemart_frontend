@@ -19,7 +19,6 @@ const AdminDashboard = () => {
     return (
         <div className="flex flex-col lg:flex-row min-h-screen bg-[#0F111A]">
             
-            {/* Mobile Top Bar */}
             <div className="lg:hidden bg-[#141621] p-6 border-b border-gray-800 flex justify-between items-center z-30 sticky top-0">
                 <h1 className="text-xl font-black text-white tracking-widest uppercase italic">
                     Mobile<span className="text-yellow-500">Mart</span>
@@ -32,7 +31,6 @@ const AdminDashboard = () => {
                 </button>
             </div>
 
-            {/* Sidebar (Responsive overlay on mobile, fixed left on desktop) */}
             <aside className={`
                 fixed inset-0 z-40 bg-[#141621] border-r border-gray-800 flex-col 
                 overflow-y-auto transition-transform transform 
@@ -40,7 +38,6 @@ const AdminDashboard = () => {
                 lg:translate-x-0 lg:flex lg:w-80 lg:sticky lg:top-0 lg:h-screen lg:relative
             `}>
                 
-                {/* Brand Logo Section (Visible mainly on desktop) */}
                 <div className="p-10 border-b border-gray-800/50 hidden lg:block">
                     <h1 className="text-2xl font-black text-white tracking-widest uppercase italic">
                         Mobile<span className="text-yellow-500">Mart</span>
@@ -48,7 +45,6 @@ const AdminDashboard = () => {
                     <p className="text-[9px] font-bold text-gray-500 uppercase tracking-[0.4em] mt-1 pr-1">Admin OS v1.2</p>
                 </div>
 
-                {/* User Context Section */}
                 <div className="p-8 border-b border-gray-800/50 bg-gradient-to-b from-gray-800/5 to-transparent">
                     <div className="flex items-center gap-4">
                         <div className="w-12 h-12 bg-yellow-500/10 text-yellow-500 rounded-2xl flex items-center justify-center border border-yellow-500/20 font-black shrink-0">
@@ -66,7 +62,6 @@ const AdminDashboard = () => {
                     </div>
                 </div>
 
-                {/* Navigation Section */}
                 <nav className="flex-1 p-6 space-y-2">
                     <div className="mb-4">
                         <span className="text-[8px] font-black text-gray-600 uppercase tracking-widest ml-4">Core Management</span>
@@ -85,7 +80,6 @@ const AdminDashboard = () => {
                     </NavLink>
                 </nav>
 
-                {/* System Action Section */}
                 <div className="p-6 mt-auto border-t border-gray-800/50">
                     <button 
                         onClick={handleLogout}
@@ -101,7 +95,6 @@ const AdminDashboard = () => {
                 </div>
             </aside>
 
-            {/* Main Content Area */}
             <main className="flex-1 p-4 sm:p-8 lg:p-12 relative overflow-y-auto">
                 <div className="max-w-7xl mx-auto space-y-8 animate-in fade-in duration-700 mt-4 lg:mt-0">
                     <div className="flex items-center justify-between">
@@ -111,7 +104,6 @@ const AdminDashboard = () => {
                         </div>
                     </div>
 
-                    {/* Actual dynamic dashboard content */}
                     <div className="bg-[#1A1C29]/50 border border-gray-800 rounded-[20px] md:rounded-[40px] p-6 sm:p-10 shadow-2xl relative overflow-hidden backdrop-blur-sm min-h-[80vh]">
                         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-yellow-500/5 blur-[120px] -mr-64 -mt-64 pointer-events-none"></div>
                         <Outlet />

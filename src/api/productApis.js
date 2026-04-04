@@ -11,13 +11,11 @@ export const getProductById = async (id) => {
 };
 
 export const createProduct = async (formData) => {
-    // If formData is a FormData object, axios will automatically set multipart/form-data
     const response = await axiosInstance.post('products/', formData);
     return response.data;
 };
 
 export const updateProduct = async (id, formData) => {
-    // We use PATCH for partial updates usually, but for FormData it's safer with full data or PATCH
     const response = await axiosInstance.patch(`products/${id}/`, formData);
     return response.data;
 };

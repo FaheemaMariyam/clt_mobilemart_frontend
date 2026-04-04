@@ -25,12 +25,10 @@ const Navbar = () => {
             <nav className="bg-black text-white shadow-lg">
                 <div className="container mx-auto px-4 md:px-6">
                     <div className="flex justify-between items-center h-16">
-                        {/* Logo */}
                         <Link to="/" className="text-2xl font-black text-yellow-500 tracking-tight" onClick={closeMobile}>
                             MobileMart
                         </Link>
 
-                        {/* Desktop Nav Links */}
                         <div className="hidden md:flex gap-6 items-center font-medium text-sm">
                             <Link to="/" className={`hover:text-yellow-400 transition ${isActive('/') ? 'text-yellow-400' : ''}`}>Home</Link>
                             <Link to="/products" className={`hover:text-yellow-400 transition ${isActive('/products') ? 'text-yellow-400' : ''}`}>Shop</Link>
@@ -63,9 +61,7 @@ const Navbar = () => {
                             )}
                         </div>
 
-                        {/* Mobile: Cart icon + Hamburger Button */}
                         <div className="flex items-center gap-3 md:hidden">
-                            {/* Always-visible cart icon on mobile */}
                             {user && !isAdmin && (
                                 <Link to="/cart" className="relative text-white" onClick={closeMobile}>
                                     <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" /></svg>
@@ -82,10 +78,8 @@ const Navbar = () => {
                                 aria-label="Toggle menu"
                             >
                                 {mobileOpen ? (
-                                    /* X icon */
                                     <svg xmlns="http://www.w3.org/2000/svg" className="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" /></svg>
                                 ) : (
-                                    /* Hamburger icon */
                                     <svg xmlns="http://www.w3.org/2000/svg" className="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" /></svg>
                                 )}
                             </button>
@@ -93,7 +87,6 @@ const Navbar = () => {
                     </div>
                 </div>
 
-                {/* Mobile Dropdown Menu */}
                 <div className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out ${mobileOpen ? 'max-h-96 border-t border-gray-800' : 'max-h-0'}`}>
                     <div className="container mx-auto px-4 py-4 flex flex-col gap-3 text-sm font-medium bg-[#0a0a0a]">
                         <Link to="/" onClick={closeMobile} className={`py-2 px-3 rounded-lg transition ${isActive('/') ? 'bg-yellow-500/10 text-yellow-400' : 'hover:bg-gray-800'}`}>
@@ -149,7 +142,6 @@ const Navbar = () => {
                     </div>
                 </div>
             </nav>
-            {/* The Yellow Marquee Bar */}
             <div className="bg-yellow-500 overflow-hidden py-1 border-b border-yellow-600">
                 <div className="animate-marquee whitespace-nowrap text-xs font-bold text-black uppercase tracking-widest">
                     🎉 Special Offer! • We are giving you an offer of 1000/- OFF • Use Code: SAVE10 🎁 + Free Shipping • 🔥 Special Offer! • We are giving you an offer of 1000/- OFF • Use Code: SAVE10 🎁 + Free Shipping • 🎉 Special Offer! • We are giving you an offer of 1000/- OFF • Use Code: SAVE10 🎁 + Free Shipping • 
