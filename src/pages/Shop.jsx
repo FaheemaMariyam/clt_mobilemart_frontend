@@ -11,7 +11,7 @@ const Shop = () => {
     const [searchTerm, setSearchTerm] = useState('');
     const [debouncedSearch, setDebouncedSearch] = useState('');
     const [selectedBrand, setSelectedBrand] = useState('All');
-    const [priceRange, setPriceRange] = useState(2500);
+    const [allBrands, setAllBrands] = useState(['All']);
 
     // Debounce Logic
     useEffect(() => {
@@ -28,13 +28,19 @@ const Shop = () => {
     const fetchProducts = async () => {
         setLoading(true);
         try {
-            const params = {
-                search: debouncedSearch !== '' ? debouncedSearch : undefined,
-                brand: selectedBrand !== 'All' ? selectedBrand : undefined,
-                max_price: priceRange !== 2500 ? priceRange : undefined
-            };
+            const params = {};
+            if (debouncedSearch) params.search = debouncedSearch;
+            if (selectedBrand !== 'All') params.brand = selectedBrand;
+            
             const data = await getProducts(params);
-            setProducts(data.results || data);
+            const productList = data.results || data;
+            setProducts(productList);
+
+            // Update brands list only if it's currently just ['All'] (initial load)
+            if (allBrands.length === 1 && productList.length > 0) {
+                const uniqueBrands = ['All', ...new Set(productList.map(p => p.brand).filter(Boolean))];
+                setAllBrands(uniqueBrands);
+            }
         } catch (error) {
             console.error('Fetch error:', error);
         } finally {
@@ -42,10 +48,7 @@ const Shop = () => {
         }
     };
 
-    const brands = useMemo(() => {
-        const uniqueBrands = ['All', ...new Set(products.map(p => p.brand).filter(Boolean))];
-        return uniqueBrands;
-    }, [products.length > 0]);
+    // Brands logic is now handled in fetchProducts for state stability
 
     return (
         <div className="container mx-auto px-4 py-12 min-h-screen bg-black">
@@ -85,7 +88,6 @@ const Shop = () => {
                         </div>
                     </div>
 
-                    {/* Brand Filter */}
                     <div className="w-full lg:w-64">
                         <label className="block text-[10px] font-black uppercase tracking-widest text-gray-500 mb-3 ml-2">Manufacturer Filter</label>
                         <select 
@@ -93,28 +95,8 @@ const Shop = () => {
                             onChange={(e) => setSelectedBrand(e.target.value)}
                             className="w-full bg-[#0D0F21] border border-gray-800 text-white p-5 rounded-2xl outline-none focus:ring-2 focus:ring-yellow-500 transition-all font-black uppercase tracking-widest text-xs"
                         >
-                            {brands.map(b => <option key={b} value={b}>{b}</option>)}
+                            {allBrands.map(b => <option key={b} value={b}>{b}</option>)}
                         </select>
-                    </div>
-
-                    {/* Price Slider */}
-                    <div className="w-full lg:w-80">
-                        <div className="flex justify-between items-center mb-3 ml-2">
-                            <label className="text-[10px] font-black uppercase tracking-widest text-gray-500">Max Value Limit</label>
-                            <span className="text-yellow-500 font-black text-xs">${priceRange}</span>
-                        </div>
-                        <div className="px-2">
-                            <input 
-                                type="range" 
-                                min="0" 
-                                max="2500" 
-                                step="50"
-                                value={priceRange}
-                                onChange={(e) => setPriceRange(e.target.value)}
-                                onMouseUp={fetchProducts}
-                                className="w-full h-2 bg-gray-800 rounded-lg appearance-none cursor-pointer accent-yellow-500"
-                            />
-                        </div>
                     </div>
                 </div>
             </div>

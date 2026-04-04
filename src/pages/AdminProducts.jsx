@@ -262,7 +262,7 @@ const AdminProducts = () => {
                                             <label className="block text-[10px] font-black text-gray-500 mb-3 uppercase tracking-[0.2em]">Brand Agency</label>
                                             <input 
                                                 type="text" 
-                                                className="w-full bg-[#12142B] border border-gray-800 p-5 rounded-[24px] focus:ring-2 focus:ring-yellow-500 outline-none transition font-bold text-white" 
+                                                className="w-full bg-[#12142B] border border-gray-800 p-5 rounded-[24px] focus:ring-2 focus:ring-yellow-500 outline-none transition font-bold text-white placeholder-gray-700" 
                                                 value={formData.brand} onChange={(e) => setFormData({...formData, brand: e.target.value})} placeholder="e.g. Apple"
                                             />
                                         </div>
@@ -282,14 +282,14 @@ const AdminProducts = () => {
                                                 value={formData.stock} onChange={(e) => setFormData({...formData, stock: e.target.value})} placeholder="0"
                                             />
                                         </div>
-                                    </div>
-                                    <div>
-                                        <label className="block text-[10px] font-black text-gray-500 mb-3 uppercase tracking-[0.2em]">Technical Specifications</label>
-                                        <input 
-                                            type="text" 
-                                            className="w-full bg-[#12142B] border border-gray-800 p-5 rounded-[24px] focus:ring-2 focus:ring-yellow-500 outline-none transition font-bold text-white" 
-                                            value={formData.specifications} onChange={(e) => setFormData({...formData, specifications: e.target.value})} placeholder="e.g. 5G, 256GB, 120Hz"
-                                        />
+                                        <div>
+                                            <label className="block text-[10px] font-black text-gray-500 mb-3 uppercase tracking-[0.2em]">Specifications</label>
+                                            <input 
+                                                type="text" 
+                                                className="w-full bg-[#12142B] border border-gray-800 p-5 rounded-[24px] focus:ring-2 focus:ring-yellow-500 outline-none transition font-bold text-white" 
+                                                value={formData.specifications} onChange={(e) => setFormData({...formData, specifications: e.target.value})} placeholder="e.g. 5G, 256GB"
+                                            />
+                                        </div>
                                     </div>
                                     <div>
                                         <label className="block text-[10px] font-black text-gray-500 mb-3 uppercase tracking-[0.2em]">Catalog Description</label>
