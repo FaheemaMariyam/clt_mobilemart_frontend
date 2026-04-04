@@ -70,7 +70,7 @@ const Login = () => {
 
                 {/* Right Side (Form) */}
                 <div className="w-full md:w-1/2 p-10 md:p-16 flex flex-col justify-center bg-[#12142B] relative">
-                    <h2 className="text-3xl font-black text-white mb-8 tracking-tighter uppercase border-l-4 border-yellow-500 pl-4">Identity Verification</h2>
+                    <h2 className="text-3xl font-black text-white mb-8 tracking-tighter uppercase border-l-4 border-yellow-500 pl-4">LOGIN </h2>
                     
                     <form onSubmit={handleSubmit} className="space-y-6">
                         <div>
@@ -85,7 +85,7 @@ const Login = () => {
                             />
                         </div>
                         <div>
-                            <label className="block text-[10px] font-black text-gray-500 mb-3 uppercase tracking-[0.2em]">Access Key</label>
+                            <label className="block text-[10px] font-black text-gray-500 mb-3 uppercase tracking-[0.2em]"> PASSWORD</label>
                             <input
                                 type="password"
                                 required
@@ -99,7 +99,7 @@ const Login = () => {
                             type="submit"
                             className="w-full bg-yellow-500 text-black font-black uppercase tracking-widest text-[11px] py-5 mt-6 rounded-[20px] hover:bg-yellow-400 transition hover:shadow-[0_0_20px_rgba(255,176,0,0.4)]"
                         >
-                            Authenticate Session
+                            LOGIN 
                         </button>
                     </form>
 

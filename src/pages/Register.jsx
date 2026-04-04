@@ -94,7 +94,7 @@ const Register = () => {
                         </div>
                         <div className="grid grid-cols-2 gap-4">
                             <div>
-                                <label className="block text-[10px] font-black text-gray-500 mb-2 uppercase tracking-[0.2em]">Access Key</label>
+                                <label className="block text-[10px] font-black text-gray-500 mb-2 uppercase tracking-[0.2em]"> PASSWORD</label>
                                 <input
                                     type="password"
                                     required
@@ -105,7 +105,7 @@ const Register = () => {
                                 />
                             </div>
                             <div>
-                                <label className="block text-[10px] font-black text-gray-500 mb-2 uppercase tracking-[0.2em]">Confirm Key</label>
+                                <label className="block text-[10px] font-black text-gray-500 mb-2 uppercase tracking-[0.2em]">Confirm PASSWORD</label>
                                 <input
                                     type="password"
                                     required

@@ -30,7 +30,7 @@ const ProductCard = ({ product }) => {
                 )}
 
                 {/* Main Product Image Container */}
-                <Link to={user ? `/products/${product.id}` : '/login'} className="block h-52 bg-[#0D0F21] rounded-2xl mb-5 overflow-hidden relative group/img">
+                <Link to={user ? `/products/${product.id}` : '/login'} className="block h-52 bg-[#1E203B] rounded-2xl mb-5 overflow-hidden relative group/img">
                     {product.thumbnail ? (
                         <img 
                             src={product.thumbnail} 

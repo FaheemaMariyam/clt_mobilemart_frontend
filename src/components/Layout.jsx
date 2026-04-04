@@ -1,5 +1,6 @@
 import React from 'react';
 import Navbar from './Navbar';
+import Footer from './Footer';
 import { Toaster } from 'react-hot-toast';
 import { useAuth } from '../context/AuthContext';
 
@@ -12,6 +13,7 @@ const Layout = ({ children }) => {
             <main className="flex-1 w-full flex flex-col">
                 {children}
             </main>
+            {!isAdmin && <Footer />}
             <Toaster position="top-right" />
         </div>
     );
