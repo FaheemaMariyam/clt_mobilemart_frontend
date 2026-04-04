@@ -41,7 +41,7 @@ const Home = () => {
     return (
         <div className="container mx-auto px-4 pt-8 space-y-12 pb-12">
             {/* Hero Container */}
-            <div className="relative w-full h-[500px] rounded-3xl overflow-hidden shadow-2xl border border-gray-800 flex items-center px-8 md:px-16">
+            <div className="relative w-full min-h-[400px] md:h-[500px] rounded-3xl overflow-hidden shadow-2xl border border-gray-800 flex items-center px-6 md:px-16 py-12 md:py-0">
                 
                 {/* Full Background Image */}
                 <div className="absolute inset-0 z-0">
@@ -64,7 +64,7 @@ const Home = () => {
 
                 <div className="relative z-10 w-full flex flex-col md:flex-row items-center justify-between gap-8 h-full">
                     {/* Left: Text Content */}
-                    <div className="max-w-xl text-center md:text-left flex flex-col items-center md:items-start justify-center pt-10 md:pt-0">
+                    <div className="max-w-xl text-center md:text-left flex flex-col items-center md:items-start justify-center">
                         <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-white mb-6 tracking-tight leading-tight">
                             Discover the Latest <br/><span className="text-yellow-500">Smartphones</span>
                         </h1>

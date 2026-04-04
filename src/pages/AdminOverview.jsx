@@ -36,7 +36,7 @@ const AdminOverview = () => {
     return (
         <div className="space-y-12 animate-in fade-in slide-in-from-bottom-6 duration-1000">
             {/* Real-time Stats Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-8">
                 <StatCard 
                     icon={FaUsers} 
                     label="Total Intelligence" 
@@ -61,9 +61,9 @@ const AdminOverview = () => {
             </div>
 
             {/* Dynamic Analytics Section */}
-            <div className="grid grid-cols-1 xl:grid-cols-2 gap-8">
+            <div className="grid grid-cols-1 xl:grid-cols-2 gap-4 sm:gap-8">
                 {/* User Growth Chart */}
-                <div className="bg-[#141621] p-10 rounded-[40px] border border-gray-800 shadow-2xl relative overflow-hidden group">
+                <div className="bg-[#141621] p-6 sm:p-10 rounded-[30px] sm:rounded-[40px] border border-gray-800 shadow-2xl relative overflow-hidden group">
                     <div className="absolute top-0 right-0 w-32 h-32 bg-yellow-500/5 blur-3xl pointer-events-none"></div>
                     <div className="mb-10">
                         <h3 className="text-xl font-black text-white uppercase tracking-tight">System Growth</h3>
@@ -92,7 +92,7 @@ const AdminOverview = () => {
                 </div>
 
                 {/* Secondary Distribution Chart */}
-                <div className="bg-[#141621] p-10 rounded-[40px] border border-gray-800 shadow-2xl relative overflow-hidden group">
+                <div className="bg-[#141621] p-6 sm:p-10 rounded-[30px] sm:rounded-[40px] border border-gray-800 shadow-2xl relative overflow-hidden group">
                     <div className="mb-10">
                         <h3 className="text-xl font-black text-white uppercase tracking-tight">Distribution Matrix</h3>
                         <p className="text-[10px] font-bold text-gray-500 uppercase tracking-widest mt-1 italic">Asset Allocation Status</p>
@@ -114,7 +114,7 @@ const AdminOverview = () => {
                 </div>
 
                 {/* Account Status Pie Chart */}
-                <div className="bg-[#141621] p-10 rounded-[40px] border border-gray-800 shadow-2xl relative overflow-hidden group">
+                <div className="bg-[#141621] p-6 sm:p-10 rounded-[30px] sm:rounded-[40px] border border-gray-800 shadow-2xl relative overflow-hidden group">
                     <div className="mb-10 text-center">
                         <h3 className="text-xl font-black text-white uppercase tracking-tight">Security Distribution</h3>
                         <p className="text-[10px] font-bold text-gray-500 uppercase tracking-widest mt-1 italic">Active vs Restricted Ratio</p>
@@ -151,10 +151,10 @@ const AdminOverview = () => {
             </div>
 
             {/* System Status Banner */}
-            <div className="bg-[#12142B] p-10 rounded-[40px] border border-gray-800 flex items-center justify-between border-dashed relative overflow-hidden">
+            <div className="bg-[#12142B] p-6 sm:p-10 rounded-[30px] sm:rounded-[40px] border border-gray-800 flex flex-col sm:flex-row items-center justify-between gap-6 border-dashed relative overflow-hidden">
                 <div className="absolute inset-0 bg-yellow-500/5 opacity-20 pointer-events-none"></div>
-                <div className="flex items-center gap-6 relative">
-                    <div className="w-16 h-16 bg-yellow-500/10 rounded-full flex items-center justify-center border border-yellow-500/20">
+                <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6 relative text-center sm:text-left">
+                    <div className="w-16 h-16 bg-yellow-500/10 rounded-full flex items-center justify-center border border-yellow-500/20 shrink-0">
                         <FaShieldAlt className="text-yellow-500 text-2xl" />
                     </div>
                     <div>
@@ -173,7 +173,7 @@ const AdminOverview = () => {
 };
 
 const StatCard = ({ icon: Icon, label, value, sub, color }) => (
-    <div className="bg-[#1A1C29] p-10 rounded-[40px] border border-gray-800 shadow-2xl relative overflow-hidden group hover:border-yellow-500/30 transition-all duration-500">
+    <div className="bg-[#1A1C29] p-6 sm:p-10 rounded-[30px] sm:rounded-[40px] border border-gray-800 shadow-2xl relative overflow-hidden group hover:border-yellow-500/30 transition-all duration-500">
         <div className={`absolute top-0 right-0 w-32 h-32 bg-gradient-to-br ${color} opacity-[0.03] blur-3xl -mr-16 -mt-16 group-hover:opacity-[0.08] transition-opacity`}></div>
         <div className="flex items-center gap-8 relative">
             <div className={`w-16 h-16 bg-gradient-to-br ${color} p-[1px] rounded-3xl`}>

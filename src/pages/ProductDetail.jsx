@@ -62,7 +62,7 @@ const ProductDetail = () => {
         }
 
         return (
-            <div className="bg-gray-50 p-4 rounded-md border text-sm text-gray-700 leading-relaxed">
+            <div className="bg-[#242736] p-5 rounded-2xl border border-gray-800 text-sm text-gray-300 leading-relaxed shadow-inner">
                 {specString}
             </div>
         );
